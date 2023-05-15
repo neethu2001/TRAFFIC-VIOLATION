@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Upload Video</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('static/images/img.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            margin-top: 50px;
+            margin-bottom: 50px;
+            color: #fff;
+        }
+        form {
+            text-align: center;
+            margin: 0 auto;
+            width: 50%;
+            max-width: 500px;
+        }
+      
+        input[type="file"] {
+            border: none;
+            margin-top: 15px;
+            display: block;
+            margin: 0 auto;
+            padding-left: 150px;
+        }
+        input[type="submit"] {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: #fff;
+            border-radius: 5px;
+            cursor: pointer;
+            margin-top: 20px;
+            display: block;
+            margin: 0 auto;
+            padding-left: 10px;
+        }
+        input[type="submit"]:hover {
+            background-color: #3e8e41;
+        }
+        #video-preview {
+            display: none;
+            margin-top: 20px;
+            max-width: 500px;
+            max-height: 500px;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Upload Video</h1>
+    <form action="/accvideo" method="POST" enctype="multipart/form-data">
+        <br>
+        <input type="file" id="video" name="video" onchange="previewVideo()" style="display: block; margin: 0 auto;">
+        <br>
+        <br>
+        <video id="video-preview" controls style="margin: 0 auto;">
+            <source id="video-source" src="" type="video/mp4">
+        </video>
+        <br>
+        <input type="submit" value="Submit" style="display: block; margin: 0 auto;">
+    </form>
+    <script>
+        function previewVideo() {
+            var video = document.querySelector('#video-preview source');
+            var file = document.querySelector('#video').files[0];
+            var reader = new FileReader();
+
+            reader.addEventListener("load", function() {
+                video.src = reader.result;
+            }, false);
+
+            if (file) {
+                reader.readAsDataURL(file);
+                document.querySelector('#video-preview').style.display = 'block';
+            }
+        }
+    </script>
+</body>
+</html>

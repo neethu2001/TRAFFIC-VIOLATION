@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ANPR</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <!-- <link href="disease.css" rel="stylesheet"> -->
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet">
+    <style>
+        body {
+            background-image: url("static/image.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="nav">
+        <input type="checkbox" id="nav-check">
+        <div class="nav-header">
+            <div class="nav-title">
+                Traffic Violation Detection
+            </div>
+        </div>
+        <div class="nav-btn">
+            <label for="nav-check">
+            <span></span>
+            <span></span>
+            <span></span>
+          </label>
+        </div>
+
+        <div class="nav-links">
+            <a href="/helmet" target="_self">Helmet Detection</a>
+            <a href="/video" target="_self">HT Video Detection</a>
+            <a href="/triple" target="_self">Triple Detection</a>
+            <a href="/accident" target="_self">Accident Detection</a>
+            <a href="/live" target="_self">Live Detection</a>
+            <a href="/analysis" target="_self"> Analysis</a>
+            <a href="/report" target="_self">Report</a>
+            <a href="/anpr" target="_self"> ANPR</a>
+            <!-- <a href="" target="_blank">About</a> -->
+        </div>
+    </div>
+</body>
+
+</html>

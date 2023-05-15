@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Violation Report</title>
+    <style>
+        /* Style the table */
+        table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+        
+        /* Style the table header */
+        th {
+            background-color: #f2f2f2;
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+            font-weight: bold;
+        }
+        
+        /* Style the table rows */
+        tr:nth-child(even) {
+            background-color: #f2f2f2;
+        }
+        
+        /* Style the table cells */
+        td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            vertical-align: top;
+        }
+    </style>
+</head>
+<body>
+    <h1>Violation Report</h1>
+    <table>
+        <thead>
+            <tr>
+                <th>Location</th>
+                <th>Helmet Violation</th>
+                <th>Count</th>
+                <th>Triple Violation</th>
+                <th>Count</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for row in data %}
+            <tr>
+                <td>{{ row[0] }}</td>
+                <td>{{ row[1] }}</td>
+                <td>{{ row[2] }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>
