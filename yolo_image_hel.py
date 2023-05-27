@@ -1,8 +1,9 @@
 import cv2
 import numpy as np
 import is_centroid_inside
+
 def detect_hel():
-    net = cv2.dnn.readNet("yolov4-custom_10000.weights", "yolov4-custom.cfg")
+    net = cv2.dnn.read("yolov4-custom_10000.weights", "yolov4-custom.cfg")
     print("done")
 
     def resize_image(image, new_width):
